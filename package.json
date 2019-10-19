@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://ruffryder.github.io/fitness-store",
   "dependencies": {
+    "firebase": "^7.2.1",
     "git-pages": "^0.8.1",
     "node-sass": "^4.12.0",
     "react": "^16.10.2",
