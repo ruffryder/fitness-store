@@ -1,6 +1,8 @@
+import * as types from "./user.types";
+
 export const setCurrentUser = user => {
   return {
-    type: "SET_CURRENT_USER",
+    type: types.SET_CURRENT_USER,
     payload: user
   };
 };
