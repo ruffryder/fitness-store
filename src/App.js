@@ -28,7 +28,6 @@ class App extends Component {
               ...snapshot.data()
             }
           });
-          console.log(this.state);
         });
       } else {
         this.setState({
