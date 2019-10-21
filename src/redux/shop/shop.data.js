@@ -1,5 +1,5 @@
-export const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  proteins: {
     id: 1,
     title: "Proteins",
     routeName: "proteins",
@@ -63,7 +63,7 @@ export const SHOP_DATA = [
       }
     ]
   },
-  {
+  creatine: {
     id: 2,
     title: "Creatine Supplements",
     routeName: "creatine",
@@ -121,7 +121,7 @@ export const SHOP_DATA = [
       }
     ]
   },
-  {
+  amino: {
     id: 3,
     title: "Amino Acids",
     routeName: "amino",
@@ -159,10 +159,10 @@ export const SHOP_DATA = [
       }
     ]
   },
-  {
+  fatty_acids: {
     id: 4,
     title: "Fatty Acids",
-    routeName: "fatty-acids",
+    routeName: "fatty_acids",
     items: [
       {
         id: 23,
@@ -210,7 +210,7 @@ export const SHOP_DATA = [
       }
     ]
   },
-  {
+  carbs: {
     id: 5,
     title: "Carbohydrates",
     routeName: "carbs",
@@ -255,4 +255,6 @@ export const SHOP_DATA = [
       }
     ]
   }
-];
+};
+
+export default SHOP_DATA;
