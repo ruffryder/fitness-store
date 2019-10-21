@@ -1,5 +1,4 @@
 import { createSelector } from "reselect";
-import { objectTypeAnnotation } from "@babel/types";
 
 const selectShop = state => state.shop;
 
