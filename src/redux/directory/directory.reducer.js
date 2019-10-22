@@ -3,37 +3,37 @@ const INITIAL_STATE = {
     {
       title: "proteins",
       imageUrl:
-        "https://sc01.alicdn.com/kf/UTB8C3eYxhHEXKJk43Jeq6yeeXXaL/FITNESS-SUPPLEMENT-FOR-SALE-SPORT-SUPPLEMENTS-FOR.jpg_350x350.jpg",
+        "https://flexfitnessclubs.com/wp-content/uploads/2017/07/protein-pic.png",
       id: 1,
       linkUrl: "shop/proteins"
     },
     {
       title: "creatine",
       imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvCTVe4hFTom5Ud8K2YORVhocxgNQFBTGe1HM3fg31YIuu55FpXg",
+        "https://images.askmen.com/1080x540/2018/01/12-023559-best_creatine_supplements.jpg",
       id: 2,
       linkUrl: "shop/creatine"
     },
     {
       title: "amino acids",
       imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvCTVe4hFTom5Ud8K2YORVhocxgNQFBTGe1HM3fg31YIuu55FpXg",
+        "https://www.bodybuilding.com/fun/images/2015/10-best-tasting-amino-acid-supplements-desktop-830x467.jpg",
       id: 3,
-      linkUrl: "shop/amino"
+      linkUrl: "shop/bcaa"
     },
     {
       title: "fatty acids",
       imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvCTVe4hFTom5Ud8K2YORVhocxgNQFBTGe1HM3fg31YIuu55FpXg",
+        "https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-aigfqdtqrhuhbs3kpr5s4v7lm5-20180203131300.Medi.jpeg",
       id: 4,
-      linkUrl: "shop/fatty_acids"
+      linkUrl: "shop/omega"
     },
     {
       title: "carbohydrates",
       imageUrl:
-        "https://www.irishtimes.com/polopoly_fs/1.2731040.1469520981!/image/image.jpg_gen/derivatives/box_620_330/image.jpg",
+        "https://cdn.shopify.com/s/files/1/1851/4671/collections/carb_grande.JPG?v=1563420829",
       id: 5,
-      linkUrl: "shop/carbs"
+      linkUrl: "shop/carbohydrates"
     }
   ]
 };
