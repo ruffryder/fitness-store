@@ -1,5 +1,5 @@
 .menu-item {
-  min-width: 30%;
+  width: 30%;
   height: 240px;
   flex: 1 1 auto;
   display: flex;
@@ -8,6 +8,15 @@
   border: 1px solid #000;
   margin: 0 7.5px 15px;
   overflow: hidden;
+  position: relative;
+
+  @media screen and (max-width: 992px) {
+    width: 45%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 
   &:hover {
     cursor: pointer;
@@ -35,8 +44,9 @@
   }
 
   .content {
+    width: 80%;
     height: 90px;
-    padding: 0 25px;
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,6 +60,9 @@
       margin-bottom: 6px;
       font-size: 22px;
       color: #4a4a4a;
+      @media screen and (max-width: 988px) {
+        font-size: 18px;
+      }
     }
     .subtitle {
       font-weight: lighter;
