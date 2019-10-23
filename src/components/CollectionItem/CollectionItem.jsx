@@ -8,10 +8,10 @@ function CollectionItem({ item, addItem }) {
   const { name, price, imageUrl } = item;
   return (
     <div className="collection-item">
-      <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />
+      <img className="image" src={imageUrl} alt={name} />
       <div className="collection-footer">
-        <span className="name">{name}</span>
-        <span className="price">${price}</span>
+        <div className="name">{name}</div>
+        <div className="price">${price}</div>
       </div>
       <CustomButton
         className="custom-button"

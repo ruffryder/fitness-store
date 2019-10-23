@@ -1,4 +1,7 @@
+@import "../../variables.scss";
+
 .cart-icon {
+  color: $primary-color;
   width: 45px;
   height: 45px;
   position: relative;
