@@ -7,11 +7,10 @@
     margin: 0 auto 30px;
   }
 
-  .items {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-
+  .items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     & .collection-item {
       margin-bottom: 30px;
     }

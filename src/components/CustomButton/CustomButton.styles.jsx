@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 const buttonStyles = css`
   background-color: black;
   color: white;
-  border: 1px solid transparents;
+  border: 1px solid transparent;
   &:hover {
     background-color: white;
     color: black;
@@ -21,9 +21,19 @@ const invertedButtonStyles = css`
   }
 `;
 
+const facebookSignInStyles = css`
+  background-color: #4267b2;
+  color: #fff;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: #2a4273;
+  }
+`;
+
 const googleSignInStyles = css`
   background-color: #4285f4;
   color: #fff;
+  border: 1px solid transparent;
   &:hover {
     background-color: #357ae8;
     border: 1px solid #000;
@@ -33,6 +43,8 @@ const googleSignInStyles = css`
 const getButtonStyles = props => {
   if (props.isGoogleSignIn) {
     return googleSignInStyles;
+  } else if (props.isFacebookSignIn) {
+    return facebookSignInStyles;
   }
   return props.inverted ? invertedButtonStyles : buttonStyles;
 };
