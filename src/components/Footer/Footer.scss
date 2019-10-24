@@ -1,0 +1,32 @@
+@import "../../variables.scss";
+
+footer {
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  background-color: $primary-color;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0 20px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    li {
+      padding: 10px;
+    }
+  }
+  a {
+    color: #fff;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease-in;
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+}

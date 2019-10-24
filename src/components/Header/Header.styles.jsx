@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 
 //used to avoid duplication of styles
 const OptionContainerStyles = css`
-  padding: 10px 15px;
+  padding: 6px 10px;
   cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in;
+  &:hover {
+    border-bottom: 1px solid #000;
+  }
 `;
 
 export const HeaderContainer = styled.div`

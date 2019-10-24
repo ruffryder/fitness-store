@@ -5,6 +5,7 @@ import "./App.scss";
 import ShopPage from "./pages/ShopPage/ShopPage";
 import SignInAndSignUpPage from "./pages/SignInAndSignUpPage/SignInAndSignUpPage";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
@@ -55,6 +56,7 @@ class App extends Component {
             }
           />
         </Switch>
+        <Footer />
       </>
     );
   }
