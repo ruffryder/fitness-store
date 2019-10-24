@@ -2,7 +2,7 @@
   "name": "fitness-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ruffryder.github.io/fitness-store",
+  "homepage": ".",
   "dependencies": {
     "firebase": "^7.2.1",
     "git-pages": "^0.8.1",
