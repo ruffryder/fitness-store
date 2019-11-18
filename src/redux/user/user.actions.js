@@ -26,3 +26,28 @@ export const emailSignInStart = emailAndPassword => ({
 export const checkUserSession = () => ({
   type: types.CHECK_USER_SESSION
 });
+
+export const signOutStart = () => ({
+  type: types.SIGN_OUT_START
+});
+export const signOutSuccess = () => ({
+  type: types.SIGN_OUT_SUCCESS
+});
+export const signOutFailure = () => ({
+  type: types.SIGN_OUT_FAILURE
+});
+
+export const signUpStart = userCredentials => ({
+  type: types.SIGN_UP_START,
+  payload: userCredentials
+});
+
+export const signUpSuccess = ({ user, additionalData }) => ({
+  type: types.SIGN_UP_SUCCESS,
+  payload: { user, additionalData }
+});
+
+export const signUpFailure = error => ({
+  type: types.SIGN_UP_FAILURE,
+  payload: error
+});
