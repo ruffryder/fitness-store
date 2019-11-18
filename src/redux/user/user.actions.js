@@ -22,3 +22,7 @@ export const emailSignInStart = emailAndPassword => ({
   type: types.EMAIL_SIGN_IN_START,
   payload: emailAndPassword
 });
+
+export const checkUserSession = () => ({
+  type: types.CHECK_USER_SESSION
+});
