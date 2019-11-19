@@ -1,10 +1,18 @@
 import React from "react";
 import "./FormInput.scss";
 
-function FormInput({ handleChange, label, ...otherProps }) {
+function FormInput({ handleChange, label, isTextarea, ...otherProps }) {
   return (
     <div className="group">
-      <input onChange={handleChange} {...otherProps} className="form-input" />
+      {isTextarea ? (
+        <textarea
+          className="form-input"
+          onChange={handleChange}
+          {...otherProps}
+        ></textarea>
+      ) : (
+        <input onChange={handleChange} {...otherProps} className="form-input" />
+      )}
       {label ? (
         <label
           className={`${

@@ -23,7 +23,7 @@ function Header({ currentUser, hidden, signOutStart }) {
       </LogoContainer>
       <OptionsContainer>
         <OptionLink to="/shop">Shop</OptionLink>
-        <OptionLink to="/shop" className="option">
+        <OptionLink to="/contact" className="option">
           Contact
         </OptionLink>
         {currentUser ? (
