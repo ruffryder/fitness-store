@@ -7,17 +7,50 @@ class ContactPage extends Component {
   state = {
     name: "",
     email: "",
-    message: ""
+    message: "",
+    errors: {
+      name: "",
+      email: "",
+      message: ""
+    }
   };
   handleChange = e => {
+    const { name, value } = e.target;
+    let errors = this.state.errors;
+    switch (name) {
+      case "name":
+        errors.name = value.length < 1 ? "Name field cannot be empty" : "";
+        break;
+      case "email":
+        errors.email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+          ? ""
+          : "Please, provide a valid email";
+        break;
+      case "message":
+        errors.message =
+          value.length < 1 ? "Message field cannot be empty" : "";
+        break;
+      default:
+        break;
+    }
     this.setState({
+      errors,
       [e.target.name]: e.target.value
     });
   };
 
+  validateForm = errors => {
+    let valid = true;
+    Object.values(errors).forEach(
+      // if we have an error string set valid to false
+      val => val.length > 0 && (valid = false)
+    );
+    return valid;
+  };
+
   handleSubmit = e => {};
   render() {
-    const { email, name, message } = this.state;
+    const { email, name, message, errors } = this.state;
     return (
       <div className="container">
         <h1>Contact</h1>
@@ -38,7 +71,7 @@ class ContactPage extends Component {
             </div>
           </div>
           <div className="form-container">
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} noValidate>
               <FormInput
                 name="name"
                 handleChange={this.handleChange}
@@ -46,7 +79,11 @@ class ContactPage extends Component {
                 type="text"
                 label="Name"
                 required
-              />
+              >
+                {errors.name.length > 0 && (
+                  <span className="error">{errors.name}</span>
+                )}
+              </FormInput>
               <FormInput
                 name="email"
                 type="email"
@@ -54,7 +91,11 @@ class ContactPage extends Component {
                 value={email}
                 label="Email"
                 required
-              />
+              >
+                {errors.email.length > 0 && (
+                  <span className="error">{errors.email}</span>
+                )}
+              </FormInput>
               <FormInput
                 name="message"
                 isTextarea
@@ -63,7 +104,11 @@ class ContactPage extends Component {
                 label="Message"
                 required
                 rows="10"
-              />
+              >
+                {errors.message.length > 0 && (
+                  <span className="error">{errors.message}</span>
+                )}
+              </FormInput>
               <div className="buttons">
                 <CustomButton type="submit">Send Message</CustomButton>
               </div>

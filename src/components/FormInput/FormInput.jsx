@@ -1,7 +1,13 @@
 import React from "react";
 import "./FormInput.scss";
 
-function FormInput({ handleChange, label, isTextarea, ...otherProps }) {
+function FormInput({
+  handleChange,
+  label,
+  isTextarea,
+  children,
+  ...otherProps
+}) {
   return (
     <div className="group">
       {isTextarea ? (
@@ -22,6 +28,7 @@ function FormInput({ handleChange, label, isTextarea, ...otherProps }) {
           {label}
         </label>
       ) : null}
+      {children}
     </div>
   );
 }

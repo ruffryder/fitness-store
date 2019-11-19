@@ -25,6 +25,10 @@ a {
   display: flex;
 }
 
+.error {
+  color: #d91e18;
+}
+
 @media screen and (max-width: 768px) {
   body {
     padding: 20px 30px;
