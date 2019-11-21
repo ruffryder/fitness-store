@@ -13,10 +13,21 @@ export const selectCollectionsForPreview = createSelector(
     collections ? Object.keys(collections).map(key => collections[key]) : []
 );
 
+export const selectFeaturedItems = createSelector(
+  [selectCollections],
+  collections => {
+    const items = collections
+      ? Object.keys(collections)
+          .map(key => collections[key])
+          .map(collection => collection.items.filter(item => item.featured))
+      : [];
+    return items;
+  }
+);
+
 export const selectCollection = collectionUrlParam =>
-  createSelector(
-    [selectCollections],
-    collections => (collections ? collections[collectionUrlParam] : null)
+  createSelector([selectCollections], collections =>
+    collections ? collections[collectionUrlParam] : null
   );
 
 export const selectIsCollectionFetching = createSelector(

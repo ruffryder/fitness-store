@@ -48,7 +48,9 @@ class ContactPage extends Component {
     return valid;
   };
 
-  handleSubmit = e => {};
+  handleSubmit = e => {
+    e.preventDefault();
+  };
   render() {
     const { email, name, message, errors } = this.state;
     return (

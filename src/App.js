@@ -11,6 +11,8 @@ import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import FeaturedPage from "./pages/FeaturedPage/FeaturedPage";
 import PageNotFoundPage from "./pages/PageNotFoundPage/PageNotFoundPage";
 import { checkUserSession } from "./redux/user/user.actions";
 
@@ -32,8 +34,10 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
+          <Route path="/featured" component={FeaturedPage} />
           <Route exact path="/checkout" component={CheckoutPage} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/about" component={AboutPage} />
           <Route
             exact
             path="/signin"
