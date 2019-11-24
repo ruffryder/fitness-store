@@ -1,5 +1,5 @@
 import React from "react";
-import CartIcon from "../CartIcon/CartIcon";
+import CartIconContainer from "../CartIcon/CartIcon.container";
 import CartDropdown from "../CartDropdown/CartDropdown";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { connect } from "react-redux";
@@ -33,7 +33,7 @@ function Header({ currentUser, hidden, signOutStart }) {
             Sign In
           </OptionLink>
         )}
-        <CartIcon />
+        <CartIconContainer />
       </OptionsContainer>
       {hidden ? null : <CartDropdown />}
     </HeaderContainer>
