@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+// Basic styles
 body {
   padding: 20px 80px;
   margin: 0;
@@ -15,6 +16,8 @@ a {
   color: #000;
 }
 
+// Utility classes
+
 .container {
   width: 1140px;
   max-width: 100%;
@@ -25,12 +28,46 @@ a {
   display: flex;
 }
 
+.title {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
 .error {
   color: #d91e18;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mr-30 {
+  margin-right: 30px;
+}
+.ml-30 {
+  margin-left: 30px;
 }
 
 @media screen and (max-width: 768px) {
   body {
     padding: 20px 30px;
+  }
+  .title {
+    font-size: 28px;
   }
 }

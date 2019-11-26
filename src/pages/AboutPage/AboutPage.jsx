@@ -7,9 +7,9 @@ function AboutPage() {
       <h1>About Us</h1>
       <hr />
       <div className="content">
-        <div className="title">
+        <h2 className="mt-30 mb-30">
           RFC® — The royal representative among fitness supplements!
-        </div>
+        </h2>
         The dedicated. The hard working. At RFC, we know where our loyalty lies.
         You're not interested in average, and you certainly don't care about
         fitting in with the crowd. RFC understands, and that's why we bring you
