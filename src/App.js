@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-import HomePage from "./pages/HomePage/HomePage";
 import { Route, Switch, Redirect } from "react-router-dom";
-import "./App.scss";
-import ShopPage from "./pages/ShopPage/ShopPage";
-import SignInAndSignUpPage from "./pages/SignInAndSignUpPage/SignInAndSignUpPage";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import { connect } from "react-redux";
+import { checkUserSession } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
+import HomePage from "./pages/HomePage/HomePage";
+import ShopPage from "./pages/ShopPage/ShopPage";
+import SignInAndSignUpPage from "./pages/SignInAndSignUpPage/SignInAndSignUpPage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
-import AboutPage from "./pages/AboutPage/AboutPage";
 import FeaturedPage from "./pages/FeaturedPage/FeaturedPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 import PageNotFoundPage from "./pages/PageNotFoundPage/PageNotFoundPage";
-import { checkUserSession } from "./redux/user/user.actions";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import "./App.scss";
 
 class App extends Component {
   unsubscribeFromAuth = null;

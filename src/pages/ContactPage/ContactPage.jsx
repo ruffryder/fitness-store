@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FormInput from "../../components/FormInput/FormInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
+import Alert from "../../components/Alert/Alert";
 import "./Contact.scss";
 
 class ContactPage extends Component {
@@ -12,7 +13,8 @@ class ContactPage extends Component {
       name: "",
       email: "",
       message: ""
-    }
+    },
+    showSubmitMessage: false
   };
   handleChange = e => {
     const { name, value } = e.target;
@@ -50,6 +52,22 @@ class ContactPage extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    if (this.validateForm(this.state.errors)) {
+      this.setState({
+        name: "",
+        email: "",
+        message: "",
+        showSubmitMessage: true
+      });
+    } else {
+      console.log("mem");
+    }
+  };
+
+  handleClose = () => {
+    this.setState({
+      showSubmitMessage: false
+    });
   };
   render() {
     const { email, name, message, errors } = this.state;
@@ -73,6 +91,13 @@ class ContactPage extends Component {
             </div>
           </div>
           <div className="form-container">
+            {this.state.showSubmitMessage && (
+              <Alert
+                type="success"
+                message="Your message has been sent successfully!"
+                handleClose={this.handleClose}
+              />
+            )}
             <form onSubmit={this.handleSubmit} noValidate>
               <FormInput
                 name="name"

@@ -6,12 +6,12 @@ import CollectionPageContainer from "../CollectionPage/CollectionPage.container"
 import CollectionsOverviewContainer from "../../components/CollectionsOverview/CollectionsOverview.container";
 
 class ShopPage extends Component {
+  unsubscribeFromSnapshot = null;
   componentDidMount() {
     const { fetchCollectionsStart } = this.props;
     fetchCollectionsStart();
   }
 
-  unsubscribeFromSnapshot = null;
   render() {
     const { match } = this.props;
     return (

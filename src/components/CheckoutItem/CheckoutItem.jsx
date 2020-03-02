@@ -15,7 +15,7 @@ function CheckoutItem({ cartItem, clearItem, addItem, removeItem }) {
         <img src={imageUrl} alt="item" />
       </div>
       <span className="name">{name}</span>
-      <span className="price">{price}</span>
+      <span className="price">${price}</span>
       <span className="quantity">
         <div onClick={() => removeItem(cartItem)} className="arrow">
           &#10094;
@@ -38,7 +38,4 @@ const mapdispatchToProps = dispatch => ({
   removeItem: item => dispatch(removeItem(item))
 });
 
-export default connect(
-  null,
-  mapdispatchToProps
-)(CheckoutItem);
+export default connect(null, mapdispatchToProps)(CheckoutItem);

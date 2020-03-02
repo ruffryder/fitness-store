@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.alert {
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  padding: 12px 10px;
+  color: $green;
+  cursor: pointer;
+  &:hover {
+    color: darken($green, 20%);
+  }
+}
+
+.success {
+  color: $green;
+  background-color: $success;
+}
