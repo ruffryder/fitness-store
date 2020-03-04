@@ -21,6 +21,7 @@ function FormInput({
       )}
       {label ? (
         <label
+          htmlFor={otherProps.id}
           className={`${
             otherProps.value.length ? "shrink" : ""
           } form-input-label`}

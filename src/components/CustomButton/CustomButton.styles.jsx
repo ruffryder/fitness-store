@@ -64,4 +64,9 @@ export const CustomButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   ${getButtonStyles}
+  &:disabled {
+    background-color: black;
+    color: white;
+    cursor: not-allowed;
+  }
 `;

@@ -1,3 +1,4 @@
+@import "./variables.scss";
 * {
   box-sizing: border-box;
 }
@@ -33,8 +34,14 @@ a {
   margin-bottom: 25px;
 }
 
+.success {
+  color: $green;
+  background-color: $success;
+}
+
 .error {
-  color: #d91e18;
+  color: $red;
+  background-color: $error;
 }
 
 .mb-10 {

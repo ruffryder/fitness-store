@@ -7,61 +7,89 @@ import "./Contact.scss";
 class ContactPage extends Component {
   state = {
     name: "",
+    nameValid: true,
     email: "",
+    emailValid: true,
     message: "",
-    errors: {
-      name: "",
-      email: "",
-      message: ""
-    },
+    messageValid: true,
+    formValid: false,
+    errorMessage: {},
     showSubmitMessage: false
   };
-  handleChange = e => {
-    const { name, value } = e.target;
-    let errors = this.state.errors;
-    switch (name) {
-      case "name":
-        errors.name = value.length < 1 ? "Name field cannot be empty" : "";
-        break;
-      case "email":
-        errors.email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
-          ? ""
-          : "Please, provide a valid email";
-        break;
-      case "message":
-        errors.message =
-          value.length < 1 ? "Message field cannot be empty" : "";
-        break;
-      default:
-        break;
+
+  validateName = () => {
+    const { name } = this.state;
+    let nameValid = true;
+    let errorMessage = { ...this.state.errorMessage };
+    if (name.length < 3) {
+      nameValid = false;
+      errorMessage.name = "Name must be at least 3 characters";
     }
-    this.setState({
-      errors,
-      [e.target.name]: e.target.value
-    });
+
+    this.setState({ nameValid, errorMessage }, this.validateForm);
   };
 
-  validateForm = errors => {
-    let valid = true;
-    Object.values(errors).forEach(
-      // if we have an error string set valid to false
-      val => val.length > 0 && (valid = false)
+  validateEmail = () => {
+    const { email } = this.state;
+    let emailValid = true;
+    let errorMessage = { ...this.state.errorMessage };
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailValid = false;
+      errorMessage.email = "Invalid email format";
+    }
+    this.setState({ emailValid, errorMessage }, this.validateForm);
+  };
+
+  validateMessage = () => {
+    const { message } = this.state;
+    let messageValid = true;
+    let errorMessage = { ...this.state.errorMessage };
+    if (message.length < 1) {
+      messageValid = false;
+      errorMessage.message = "Message field cannot be empty";
+    }
+    this.setState({ messageValid, errorMessage }, this.validateForm);
+  };
+
+  validateField = name => {
+    switch (name) {
+      case "name":
+        this.validateName();
+        break;
+      case "email":
+        this.validateEmail();
+        break;
+      case "message":
+        this.validateMessage();
+        break;
+      default:
+        return;
+    }
+  };
+
+  handleChange = e => {
+    const { name, value } = e.target;
+    this.setState(
+      {
+        [name]: value
+      },
+      () => this.validateField(name)
     );
-    return valid;
+  };
+
+  validateForm = () => {
+    const { nameValid, emailValid, messageValid } = this.state;
+    this.setState({ formValid: nameValid && emailValid && messageValid });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    if (this.validateForm(this.state.errors)) {
-      this.setState({
-        name: "",
-        email: "",
-        message: "",
-        showSubmitMessage: true
-      });
-    } else {
-      console.log("mem");
-    }
+    this.setState({
+      name: "",
+      email: "",
+      message: "",
+      showSubmitMessage: true
+    });
   };
 
   handleClose = () => {
@@ -70,7 +98,7 @@ class ContactPage extends Component {
     });
   };
   render() {
-    const { email, name, message, errors } = this.state;
+    const { email, name, message, errorMessage } = this.state;
     return (
       <div className="container">
         <h1>Contact</h1>
@@ -93,6 +121,7 @@ class ContactPage extends Component {
           <div className="form-container">
             {this.state.showSubmitMessage && (
               <Alert
+                closable
                 type="success"
                 message="Your message has been sent successfully!"
                 handleClose={this.handleClose}
@@ -101,30 +130,33 @@ class ContactPage extends Component {
             <form onSubmit={this.handleSubmit} noValidate>
               <FormInput
                 name="name"
+                id="name"
                 handleChange={this.handleChange}
                 value={name}
                 type="text"
                 label="Name"
                 required
               >
-                {errors.name.length > 0 && (
-                  <span className="error">{errors.name}</span>
+                {!this.state.nameValid && (
+                  <Alert type="error" message={errorMessage.name} />
                 )}
               </FormInput>
               <FormInput
                 name="email"
+                id="email"
                 type="email"
                 handleChange={this.handleChange}
                 value={email}
                 label="Email"
                 required
               >
-                {errors.email.length > 0 && (
-                  <span className="error">{errors.email}</span>
+                {!this.state.emailValid && (
+                  <Alert type="error" message={errorMessage.email} />
                 )}
               </FormInput>
               <FormInput
                 name="message"
+                id="message"
                 isTextarea
                 handleChange={this.handleChange}
                 value={message}
@@ -132,12 +164,14 @@ class ContactPage extends Component {
                 required
                 rows="10"
               >
-                {errors.message.length > 0 && (
-                  <span className="error">{errors.message}</span>
+                {!this.state.messageValid && (
+                  <Alert type="error" message={errorMessage.email} />
                 )}
               </FormInput>
               <div className="buttons">
-                <CustomButton type="submit">Send Message</CustomButton>
+                <CustomButton disabled={!this.state.formValid} type="submit">
+                  Send Message
+                </CustomButton>
               </div>
             </form>
           </div>
