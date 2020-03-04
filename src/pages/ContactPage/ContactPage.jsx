@@ -165,7 +165,7 @@ class ContactPage extends Component {
                 rows="10"
               >
                 {!this.state.messageValid && (
-                  <Alert type="error" message={errorMessage.email} />
+                  <Alert type="error" message={errorMessage.message} />
                 )}
               </FormInput>
               <div className="buttons">
