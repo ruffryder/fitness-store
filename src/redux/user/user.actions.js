@@ -8,6 +8,11 @@ export const facebookSignInStart = () => ({
   type: types.FACEBOOK_SIGN_IN_START
 });
 
+export const emailSignInStart = emailAndPassword => ({
+  type: types.EMAIL_SIGN_IN_START,
+  payload: emailAndPassword
+});
+
 export const signInSuccess = user => ({
   type: types.SIGN_IN_SUCCESS,
   payload: user
@@ -15,12 +20,7 @@ export const signInSuccess = user => ({
 
 export const signInFailure = error => ({
   type: types.SIGN_IN_FAILURE,
-  payload: error
-});
-
-export const emailSignInStart = emailAndPassword => ({
-  type: types.EMAIL_SIGN_IN_START,
-  payload: emailAndPassword
+  payload: error.message
 });
 
 export const checkUserSession = () => ({
@@ -50,4 +50,8 @@ export const signUpSuccess = ({ user, additionalData }) => ({
 export const signUpFailure = error => ({
   type: types.SIGN_UP_FAILURE,
   payload: error
+});
+
+export const clearErrors = () => ({
+  type: types.CLEAR_ERRORS
 });

@@ -25,7 +25,6 @@ class App extends Component {
   }
 
   componentWillUnmount() {
-    console.log("test");
     this.unsubscribeFromAuth();
   }
   render() {

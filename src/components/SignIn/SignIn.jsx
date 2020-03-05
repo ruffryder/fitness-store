@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import FormInput from "../FormInput/FormInput";
-import CustomButton from "../CustomButton/CustomButton";
-import "./SignIn.scss";
 import { connect } from "react-redux";
 import {
   googleSignInStart,
   facebookSignInStart,
-  emailSignInStart
+  emailSignInStart,
+  clearErrors
 } from "../../redux/user/user.actions";
+import FormInput from "../FormInput/FormInput";
+import CustomButton from "../CustomButton/CustomButton";
+import Alert from "../Alert/Alert";
+import "./SignIn.scss";
 
 class SignIn extends Component {
   constructor(props) {
@@ -16,6 +18,10 @@ class SignIn extends Component {
       email: "",
       password: ""
     };
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleChange = e => {
@@ -33,11 +39,12 @@ class SignIn extends Component {
   };
 
   render() {
-    const { googleSignInStart, facebookSignInStart } = this.props;
+    const { signInError, googleSignInStart, facebookSignInStart } = this.props;
     return (
       <div className="sign-in">
         <h2 className="mb-10 mt-10">I already have an account</h2>
-        <span>Sign in with your email and password</span>
+        <span className="mb-10">Sign in with your email and password</span>
+        {signInError && <Alert type="error" message={signInError} />}
         <form onSubmit={this.handleSubmit}>
           <FormInput
             name="email"
@@ -79,11 +86,16 @@ class SignIn extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  signInError: state.user.error
+});
+
 const mapDispatchToProps = dispatch => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
   emailSignInStart: (email, password) =>
     dispatch(emailSignInStart({ email, password })),
-  facebookSignInStart: () => dispatch(facebookSignInStart())
+  facebookSignInStart: () => dispatch(facebookSignInStart()),
+  clearErrors: () => dispatch(clearErrors())
 });
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

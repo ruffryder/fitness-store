@@ -14,7 +14,6 @@ class FeaturedPage extends Component {
 
   render() {
     const { featuredItems } = this.props;
-    console.log(featuredItems);
     return (
       <div className="item-container">
         {featuredItems.map(collectionItems =>
