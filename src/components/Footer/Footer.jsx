@@ -5,8 +5,10 @@ function Footer() {
   const currentYear = new Date().getFullYear();
   return (
     <footer>
-      <div>&#9400; copyright {currentYear}. All rights reserved</div>
-      <div>
+      <div id="footer-copyright">
+        &#9400; copyright {currentYear}. All rights reserved
+      </div>
+      <div id="footer-links">
         <ul className="footerNav">
           <li>
             <a href="/shop">Shop</a>

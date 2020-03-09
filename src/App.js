@@ -29,7 +29,7 @@ class App extends Component {
   }
   render() {
     return (
-      <>
+      <div id="page-container">
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -52,7 +52,7 @@ class App extends Component {
           <Route component={PageNotFoundPage} />
         </Switch>
         <Footer />
-      </>
+      </div>
     );
   }
 }

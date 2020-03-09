@@ -11,12 +11,16 @@ footer {
   padding: 0 20px;
   text-transform: uppercase;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
   ul {
     margin: 0;
     list-style: none;
     display: flex;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
     li {
       padding: 10px;
     }
@@ -28,5 +32,23 @@ footer {
     &:hover {
       border-bottom: 1px solid #fff;
     }
+  }
+
+  #footer-copyright {
+    order: 2;
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 576px) {
+  footer ul {
+    padding: 10px 15px;
+  }
+}
+
+@media (min-width: 700px) {
+  footer #footer-copyright {
+    order: 0;
+    font-size: 12px;
   }
 }
