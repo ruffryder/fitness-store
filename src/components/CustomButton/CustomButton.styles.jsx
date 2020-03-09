@@ -50,12 +50,12 @@ const getButtonStyles = props => {
 };
 
 export const CustomButtonContainer = styled.button`
-  min-width: 120px;
+  min-width: 90px;
   width: auto;
-  height: 50px;
+  min-height: 50px;
   letter-spacing: 0.5px;
   line-height: 20px;
-  padding: 0 20px;
+  padding: 0 5px;
   font-size: 12px;
   text-transform: uppercase;
   font-family: "Open Sans";
@@ -68,5 +68,9 @@ export const CustomButtonContainer = styled.button`
     background-color: black;
     color: white;
     cursor: not-allowed;
+  }
+  @media (min-width: 480px) {
+    min-width: 120px;
+    padding: 0 20px;
   }
 `;

@@ -1,7 +1,23 @@
 .map-container {
-  width: 48%;
+  width: 100%;
+  order: 2;
 }
 .form-container {
-  width: 48%;
+  width: 100%;
   padding: 30px;
+  padding-top: 0;
+  order: 0;
+}
+
+@media (min-width: 800px) {
+  .form-container,
+  .map-container {
+    width: 48%;
+  }
+  .form-container {
+    order: 2;
+  }
+  .map-container {
+    order: 1;
+  }
 }

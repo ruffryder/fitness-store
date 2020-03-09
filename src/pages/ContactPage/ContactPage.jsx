@@ -103,7 +103,7 @@ class ContactPage extends Component {
       <div className="container">
         <h1>Contact</h1>
         <hr />
-        <div className="flex-container">
+        <div className="flex-container wrap">
           <div className="map-container">
             <div style={{ width: "100%" }}>
               <iframe
