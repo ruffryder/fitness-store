@@ -13,8 +13,8 @@ function CheckoutItem({ cartItem, clearItem, addItem, removeItem }) {
     <div className="checkout-item">
       <div className="image-container">
         <img src={imageUrl} alt="item" />
+        <span className="name d-block">{name}</span>
       </div>
-      <span className="name">{name}</span>
       <span className="price">${price}</span>
       <span className="quantity">
         <div onClick={() => removeItem(cartItem)} className="arrow">
