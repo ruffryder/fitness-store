@@ -35,6 +35,10 @@ export const OptionsContainer = styled.div`
     width: 65%;
     font-size: 14px;
   }
+  @media screen and (max-width: 420px) {
+    width: 70%;
+    font-size: 12px;
+  }
 `;
 
 export const OptionLink = styled(Link)`

@@ -13,6 +13,21 @@ body {
   position: relative;
 }
 
+h1 {
+  margin: 0.3em 0;
+  font-size: 1.5em;
+  @media screen and (min-width: 576px) {
+    font-size: 2em;
+  }
+}
+
+h2 {
+  font-size: 1.2em;
+  @media screen and (min-width: 576px) {
+    font-size: 1.5em;
+  }
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -28,7 +43,12 @@ a {
 .container {
   width: 1140px;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 20px auto 0;
+  padding: 20px;
+  @media screen and (min-width: 1290px) {
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
 .flex-container {

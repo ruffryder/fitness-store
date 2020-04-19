@@ -19,7 +19,7 @@ footer {
     list-style: none;
     display: flex;
     padding: 5px;
-    font-size: 12px;
+    font-size: 10px;
     text-align: center;
     li {
       padding: 10px;
@@ -37,6 +37,7 @@ footer {
   #footer-copyright {
     order: 2;
     font-size: 10px;
+    margin-bottom: 10px;
   }
 }
 

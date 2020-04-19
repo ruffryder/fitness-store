@@ -1,11 +1,12 @@
 .collection-preview {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-bottom: 30px;
 
   .preview {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
   }
 }
